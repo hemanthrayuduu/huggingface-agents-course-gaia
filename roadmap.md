@@ -1,3 +1,7 @@
+⚠️ **CRITICAL NOTES**
+- DO NOT push `assignment_instructions` file to any public repository or space
+- Keep assignment details private and confidential
+
 # 🚀 GAIA Benchmark Agent Development Roadmap
 
 ## 🎯 **Project Objectives**
