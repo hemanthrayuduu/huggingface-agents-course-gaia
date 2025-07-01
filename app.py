@@ -142,6 +142,7 @@ def run_and_submit_all( profile: gr.OAuthProfile | None):
 
 # --- Build Gradio Interface using Blocks ---
 with gr.Blocks() as demo:
+<<<<<<< HEAD
     gr.Markdown("# Basic Agent Evaluation Runner")
     gr.Markdown(
         """
@@ -157,6 +158,14 @@ with gr.Blocks() as demo:
         This space provides a basic setup and is intentionally sub-optimal to encourage you to develop your own, more robust solution. For instance for the delay process of the submit button, a solution could be to cache the answers and submit in a seperate action or even to answer the questions in async.
         """
     )
+=======
+    gr.Markdown("Agent Performance Evaluator")
+    gr.Markdown("""
+    **Instructions:**
+    1. Log in to Hugging Face.
+    2. Run your agent on evaluation tasks and submit answers.
+    """)
+>>>>>>> 8439599 (Update local changes)
 
     gr.LoginButton()
 
