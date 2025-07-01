@@ -10,6 +10,7 @@ pinned: false
 hf_oauth: true
 hf_oauth_expiration_minutes: 480
 short_description: Agent for GAIA Evaluation
+python_version: "3.10"
 ---
 
 # 🧠 Agent for GAIA Evaluation
@@ -57,8 +58,8 @@ guidelines, and submits answers back for scoring.
 2. Set your environment variables:
 
    ```
-   GEMINI_API_KEY=your_api_key_here
-   SPACE_ID=your_hf_space_id
+   GEMINI_API_KEY=your_api_key
+   SPACE_ID=your_space_id
    ```
 3. Install dependencies:
 
@@ -76,7 +77,7 @@ Or launch directly via [Hugging Face Spaces](https://huggingface.co/spaces/).
 ## 🧪 Evaluation Flow
 
 1. Log in to Hugging Face through the UI
-2. Click “Run Evaluation & Submit All Answers”
+2. Click "Run Evaluation & Submit All Answers"
 3. The agent will fetch tasks, solve them, and submit results
 
 
