@@ -8,68 +8,100 @@ sdk_version: 5.25.2
 app_file: app.py
 pinned: false
 hf_oauth: true
-# optional, default duration is 8 hours/480 minutes. Max duration is 30 days/43200 minutes.
 hf_oauth_expiration_minutes: 480
+short_description: Agent for GAIA Evaluation
 ---
+
+# 🧠 Agent for GAIA Evaluation
+
+This project contains a Gemini-powered CodeAgent built with [smolagents](https://github.com/smol-ai/smol-agents) for use 
+in the **GAIA Unit 4 Evaluation**  of the [Hugging Face Course](https://hf.co/learn/agents-course/unit0/introduction).
+
+> 🧑‍🏫 This app is part of the **Hugging Face Courses** series and was developed as an educational project to showcase how machine
+> learning can be used in real-world event scenarios. Learn more at [Hugging Face Courses](https://huggingface.co/learn).
+---
+
+### 🗂 Folder Structure
+
+```
+Template Final Assignment_app/
+│
+├── app.py                       # Main app with Gradio UI and agent execution logic.
+├── gaia_tools                   # Custom tools including RunPythonFileTool and download_server.
+├── .env.template                # Environment variables template /Template file showing expected environment variables (e.g., API keys).
+├── requirements.txt             # Python dependencies. 
+└── README.md                    # Project overview, setup instructions, usage examples.
+```
+
+
+## 🚀 Features
+
+* Uses the **Gemini 2.0 Flash** model via `LiteLLMModel`
+* Equipped with essential tools:
+
+  * `DuckDuckGoSearchTool` for quick lookups
+  * `RunPythonFileTool` for executing `.py` scripts
+  * `ReverseTextTool` for decoding reversed questions
+  * `download_server` for fetching files from URLs
+  * Base tools (math, string manipulation, etc.)
+
+## 📋 Evaluation Strategy
+
+The agent reads questions from the GAIA evaluation endpoint, applies reasoning using a system prompt with strict 
+guidelines, and submits answers back for scoring.
+
+
+## 🛠️ Setup
+
+1. Clone this repository or Space
+2. Set your environment variables:
+
+   ```
+   GEMINI_API_KEY=your_api_key_here
+   SPACE_ID=your_hf_space_id
+   ```
+3. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run locally:
+
+   ```bash
+   python app.py
+   ```
+
+Or launch directly via [Hugging Face Spaces](https://huggingface.co/spaces/).
+
+## 🧪 Evaluation Flow
+
+1. Log in to Hugging Face through the UI
+2. Click “Run Evaluation & Submit All Answers”
+3. The agent will fetch tasks, solve them, and submit results
+
+
+---
+## 🤝 Contributing
+
+We welcome contributions to improve GalaGuide!
+
+1. Fork the repository  
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-xyz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
-
-# 🤖 GAIA Benchmark Agent | Hugging Face Agents Course
-
-## 🎯 Project Overview
-This repository contains an implementation of an AI agent designed to tackle the GAIA benchmark, focusing specifically on Level 1 questions. The project is part of the Hugging Face Agents Course Final Assignment.
-
-## 🏗️ Architecture
-- **Agent Framework**: LangGraph for reliable agent orchestration
-- **Language Model**: Mixtral-8x7B via HF Inference API
-- **Interface**: Gradio UI for easy interaction
-- **Tools**: Free, open-source tools for web search, math, and text processing
-
-## 🛠️ Core Features
-- Web search using DuckDuckGo
-- Basic mathematical operations
-- File handling and text processing
-- Answer validation and formatting
-- Optional: Image analysis (if core is stable)
-
-## 🚀 Getting Started
-
-### Prerequisites
-```bash
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Running the Agent
-```bash
-# Start the Gradio interface
-python app.py
-```
-
-## 📊 Performance Goals
-- Primary Target: 20-25% accuracy on GAIA Level 1
-- Stretch Goal: Push towards 30% if core is stable
-- Focus on reliability and consistent results
-
-## 🔧 Technical Stack
-- **Core**: Python, LangGraph, LangChain
-- **API**: Hugging Face Inference API
-- **Search**: DuckDuckGo + BeautifulSoup
-- **UI**: Gradio
-
-## 🤝 Contributing
-This is a course project, but suggestions and improvements are welcome! Feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a Pull Request
-
-## 📝 License
-MIT License - feel free to use this code for your own projects!
-
-## 🙏 Acknowledgments
-- Hugging Face for the excellent Agents Course
-- GAIA benchmark team for the evaluation framework
-- Open-source community for the tools and libraries
-
----
-> 🔍 Part of the [Hugging Face Agents Course](https://huggingface.co/learn/agents-course) Final Assignment
